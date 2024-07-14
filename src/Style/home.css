@@ -1,9 +1,9 @@
-.container .row h1 span{
+.home .row h1 span{
   color: #f00202;
   font-weight: bold;
   font-size: 70px;
 }
-.container .row h1{
+.home .row h1{
   font-size: 70px;
 
 }
@@ -12,7 +12,24 @@
   border: none !important;
   box-shadow: none !important;
 }
+@media (max-width:947px){
+  .home .row,.home .row .text-holder{
+    padding-top: 0px !important;
+  }
+}
 
 @media (max-width:497px) {
-    
+  .home .row{
+    padding: 0;
+  }
+  .home .row h1 span,.home .row h1{
+    font-size: 40px;
+    padding-top: 10px !important;
+  }
+  .home .img-holder{
+    padding: 40px;
+  }
+
 }
+
+
