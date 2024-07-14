@@ -1,0 +1,21 @@
+.navbar-custom{
+  background: transparent ;
+}
+.navbar-toggler{
+  border: none !important;
+}
+.navbar-toggler:focus{
+  box-shadow: none !important;
+
+}
+.nav-item .active{
+  color: #fa0000 !important;
+
+}
+.nav-link{
+  font-size: 20px !important;
+  font-weight: 600 !important;
+}
+.nav-link:hover{
+  color: #fa0000 !important ;
+}
