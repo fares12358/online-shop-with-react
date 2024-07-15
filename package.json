@@ -1,7 +1,7 @@
 {
   "name": "p1",
   "version": "0.1.0",
-
+  "homepage": "https://fares12358.github.io/online-shop-with-react",
   "private": true,
   "dependencies": {
     "@emotion/react": "^11.11.4",
