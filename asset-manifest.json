@@ -1,14 +1,20 @@
 {
   "files": {
-    "main.css": "/online-shop-with-react/static/css/main.626e0f12.css",
-    "main.js": "/online-shop-with-react/static/js/main.de51b3aa.js",
+    "main.css": "/online-shop-with-react/static/css/main.39f8b20d.css",
+    "main.js": "/online-shop-with-react/static/js/main.4fbf5547.js",
     "static/media/main.png": "/online-shop-with-react/static/media/main.306ba71fb369810ea865.png",
+    "static/media/g2.png": "/online-shop-with-react/static/media/g2.ec326de70fa6200b3889.png",
+    "static/media/g1.png": "/online-shop-with-react/static/media/g1.c5a94b4662417c29d31c.png",
+    "static/media/about-post.png": "/online-shop-with-react/static/media/about-post.2d0074ee8f2225f46681.png",
+    "static/media/Untitled (3).png": "/online-shop-with-react/static/media/Untitled (3).2bd59303a0dc0afda30c.png",
+    "static/media/img2.png": "/online-shop-with-react/static/media/img2.8535d1e6c449a3ebc12c.png",
+    "static/media/img1.png": "/online-shop-with-react/static/media/img1.d09d95eef699b53c7f18.png",
     "index.html": "/online-shop-with-react/index.html",
-    "main.626e0f12.css.map": "/online-shop-with-react/static/css/main.626e0f12.css.map",
-    "main.de51b3aa.js.map": "/online-shop-with-react/static/js/main.de51b3aa.js.map"
+    "main.39f8b20d.css.map": "/online-shop-with-react/static/css/main.39f8b20d.css.map",
+    "main.4fbf5547.js.map": "/online-shop-with-react/static/js/main.4fbf5547.js.map"
   },
   "entrypoints": [
-    "static/css/main.626e0f12.css",
-    "static/js/main.de51b3aa.js"
+    "static/css/main.39f8b20d.css",
+    "static/js/main.4fbf5547.js"
   ]
 }
