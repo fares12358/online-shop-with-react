@@ -10,9 +10,8 @@ import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 
 function App() {
   return (
-    <Router>
+    <Router basename={process.env.PUBLIC_URL}>
       <div className="App">
-        <h1>fares</h1>
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
