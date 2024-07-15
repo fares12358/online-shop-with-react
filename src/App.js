@@ -12,6 +12,7 @@ function App() {
   return (
     <Router>
       <div className="App">
+        <h1>fares</h1>
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
