@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/online-shop-with-react/static/css/main.39f8b20d.css",
-    "main.js": "/online-shop-with-react/static/js/main.ad3618e5.js",
+    "main.js": "/online-shop-with-react/static/js/main.460ab4d4.js",
     "static/media/main.png": "/online-shop-with-react/static/media/main.306ba71fb369810ea865.png",
     "static/media/g2.png": "/online-shop-with-react/static/media/g2.ec326de70fa6200b3889.png",
     "static/media/g1.png": "/online-shop-with-react/static/media/g1.c5a94b4662417c29d31c.png",
@@ -11,10 +11,10 @@
     "static/media/img1.png": "/online-shop-with-react/static/media/img1.d09d95eef699b53c7f18.png",
     "index.html": "/online-shop-with-react/index.html",
     "main.39f8b20d.css.map": "/online-shop-with-react/static/css/main.39f8b20d.css.map",
-    "main.ad3618e5.js.map": "/online-shop-with-react/static/js/main.ad3618e5.js.map"
+    "main.460ab4d4.js.map": "/online-shop-with-react/static/js/main.460ab4d4.js.map"
   },
   "entrypoints": [
     "static/css/main.39f8b20d.css",
-    "static/js/main.ad3618e5.js"
+    "static/js/main.460ab4d4.js"
   ]
 }
