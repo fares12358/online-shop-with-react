@@ -7,7 +7,7 @@ const Nav = () => {
       <nav className=" navbar navbar-expand-lg navbar-custom">
         <div className="container">
           <Link className="navbar-brand fw-bold fs-2 text-uppercase " to="/">
-            mocom
+            <img className="img-fluid" src={require('../img/logo.png')} alt="logo" />
           </Link>
           <button
             className="navbar-toggler fs-4"
@@ -44,6 +44,11 @@ const Nav = () => {
               <li className="nav-item p-2 ">
                 <Link className="nav-link text-black " to="/Contact">
                   Contact
+                </Link>
+              </li>
+              <li className="nav-item p-2 ">
+                <Link className="nav-link sign btn btn-primary main-btn px-4" to="">
+                  Sign in
                 </Link>
               </li>
             </ul>

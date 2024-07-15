@@ -1,0 +1,45 @@
+
+.about,.premium{
+  padding: 48px;
+}
+
+.about h1{
+  color: #f20000;
+}
+
+.about .image-holder{
+  max-width: 100%;
+  height: auto;
+}
+.about h2,.premium h2{
+  color: #f20000;
+}
+
+.premium .img-holder{
+  background: #003049;
+}
+.img-holder .image{
+  background: #ffffff;
+  width: 60%;
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px;
+}
+@media (max-width:805px) {
+  .about,.premium{
+    padding: 30px 12px !important;
+  }
+  .about h1{
+    font-size: 25px !important;
+    padding: 15px 0 !important;
+
+  }
+}
+
+
+@media (max-width:405px) {
+
+  .about h1{
+    font-size: 15px !important;
+    padding: 15px 0 !important;
+  }
+}

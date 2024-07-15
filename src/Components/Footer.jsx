@@ -1,15 +1,16 @@
 import React from "react";
 import "../Style/footer.css";
+import { Link } from "react-router-dom";
+
 const Footer = () => {
   return (
     <>
-      <div class="footer pt-5 text-black text-center text-lg-start">
+      <div class="footer p-5 text-black text-center text-lg-start">
         <div class="container">
           <div class="row align-items-center justify-content-around ">
             <div class="col-md-6 col-lg-4">
               <div class="info">
-                {/* <img class="mb-4" src="/img/logo.png" alt=""/> */}
-                <h2 className="text-uppercase fw-bold">mocom</h2>
+                <Link to="/"><img class="mb-4" src={require("../img/logo.png")}alt=""/></Link>
                 <p class="mb-3">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
                 </p>
