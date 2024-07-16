@@ -1,11 +1,8 @@
 import React from "react";
-import Nav from "../Components/Nav";
-import Footer from "../Components/Footer";
-import "../Style/contact.css";
-const Contact = () => {
+
+const Signin = ({handelSingIn}) => {
   return (
     <>
-      <Nav />
       <div className="container p-5">
         <form action="" className="text-center p-4">
           <div className="row justify-content-around">
@@ -29,27 +26,37 @@ const Contact = () => {
             />
             <input
               className="col-12 col-md-5 p-2 my-2"
+              type="text"
+              placeholder="Enter username"
+            />
+            <input
+              className="col-12 col-md-5 p-2 my-2"
+              type="password"
+              placeholder="Enter password"
+            />
+            <input
+              className="col-12 col-md-5 p-2 my-2"
               type="tell"
               placeholder="Enter your number"
             />
-            <textarea
-              className="col-12 col-md-5 p-2 my-2 "
-              cols={"25"}
-              rows={"10"}
-              placeholder="Enter your number"
-            />
-            <div className="btn-holder col-5 d-flex justify-content-center align-items-center">
-              <button className="send btn btn-primary main-btn mt-3 px-5 py-2 fw-bold fs-5 ">
-                Send
+            <div className="row btn-holder col-12 d-flex justify-content-center align-items-center">
+              <p className=" col-12 col-md-6 py-2 mx-3 ">
+                you already have an account?
+                <span
+                  className="fw-bold text-uppercase signUp ms-3" onClick={handelSingIn}
+                >
+                  Sign in
+                </span>
+              </p>
+              <button className="col-12 col-md-6  send btn btn-primary main-btn mt-3 fw-bold ">
+                Create account
               </button>
             </div>
           </div>
         </form>
       </div>
-
-      <Footer />
     </>
   );
 };
 
-export default Contact;
+export default Signin;

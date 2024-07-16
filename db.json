@@ -1,0 +1,28 @@
+{
+  "users": [
+    {
+      "id": 0,
+      "name": "Fares",
+      "username": "fares",
+      "password": "01124711424",
+      "email": "fm883254@gmail.com",
+      "role": "admin"
+    },
+    {
+      "id": 1,
+      "name": "Mohamed",
+      "username": "mohamed",
+      "password": "01124711424",
+      "email": "fm883254@gmail.com",
+      "role": "user"
+    }
+  ],
+  "products": [
+    {
+      "id": 0,
+      "prodName": "product 1",
+      "price": "100",
+      "src": "../img/image-productes/g1.png"
+    }
+  ]
+}

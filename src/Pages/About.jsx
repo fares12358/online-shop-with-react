@@ -67,7 +67,6 @@ const About = () => {
           pretium nibh ipsum.
         </p>
       </div>
-      
       <div className="container premium text-center text-md-start">
         <div className="row">
           <div className="col-12 col-lg-6 text-holder my-3">
