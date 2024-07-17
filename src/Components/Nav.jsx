@@ -1,30 +1,36 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 import "../Style/nav.css";
-
+import { useAuth } from "./AuthContext"; // Import useAuth hook
 const Nav = () => {
+  const { isLogged } = useAuth();
+  const { user } = useAuth();
 
-  const [isSign, setIsSign] = useState(false);
-
-  let addTrue = () => {
-    isSign ? setIsSign(false) : setIsSign(true);
-  };
   useEffect(() => {
     const SginBtn = document.querySelector(".sign");
     const menuHolder = document.querySelector(".menu-holder");
+    const Dashboard = document.querySelector(".Dashboard");
 
-    if (isSign) {
+    if (isLogged) {
       SginBtn.classList.add("hide");
       SginBtn.classList.remove("view");
       menuHolder.classList.add("view");
       menuHolder.classList.remove("hide");
+      if(user.role==="admin"){
+        Dashboard.classList.add("view");
+        Dashboard.classList.remove("hide");
+      }
+      else{
+        Dashboard.classList.remove("view");
+        Dashboard.classList.add("hide");
+      }
     } else {
       SginBtn.classList.add("view");
       SginBtn.classList.remove("hide");
       menuHolder.classList.add("hide");
       menuHolder.classList.remove("view");
     }
-  }, [isSign]);
+  }, [isLogged,user]);
 
   return (
     <>
@@ -86,17 +92,22 @@ const Nav = () => {
                   </button>
                   <ul class="dropdown-menu">
                     <li>
-                      <Link to="/Account" class="dropdown-item fw-bold ">
+                      <button className="btn bg-red text-uppercase fw-bold ">
+                        log out
+                      </button>
+                    </li>
+                    <li>
+                      <Link to="/Account" class="dropdown-item fw-bold mt-2">
                         Account
                       </Link>
                     </li>
-                    <li>
-                      <Link to="/Dashboard" class="dropdown-item fw-bold">
+                    <li className="Dashboard">
+                      <Link to="/Dashboard" class="dropdown-item fw-bold mt-2">
                         Dashboard
                       </Link>
                     </li>
                     <li>
-                      <Link to="/Cart" class="dropdown-item fw-bold">
+                      <Link to="/Cart" class="dropdown-item fw-bold mt-2">
                         Cart
                       </Link>
                     </li>

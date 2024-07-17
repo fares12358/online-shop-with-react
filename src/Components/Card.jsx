@@ -17,7 +17,7 @@ const Card = () => {
         <p className="description">iPhone 13 Pro - Transparent
         LKR 499</p>
         <div className='price'>100 L.E</div>
-        <button className='buy btn btn-primary px-4 py-1 fw-bold main-btn mt-2' onClick={chickbuy}>Buy</button>
+        <button className='buy btn btn-primary px-4 py-1 fw-bold main-btn mt-2' onClick={chickbuy}>add to cart</button>
       </div>
     </>
   )
