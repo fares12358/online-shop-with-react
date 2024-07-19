@@ -6,6 +6,8 @@ import { Link } from "react-router-dom";
 import Card from "../Components/Card";
 
 const Home = () => {
+
+
   return (
     <>
       <Nav />
@@ -41,7 +43,7 @@ const Home = () => {
           <div className="col-12 col-lg-6 img-holder text-center p-5">
             <img
               className="img-fluid"
-              src={require("../img/image-productes/g2.png")}
+              src={require("../img/g2.png")}
               alt="prod1"
             />
           </div>
@@ -72,23 +74,48 @@ const Home = () => {
       <div className="container text-center ">
         <div className="row  py-5">
           <h2 className="fw-bold prod-holder">Similar Product</h2>
+          <div className=" grad-holder col-12 col-md-6 col-lg-3 my-5">
+            <Card
+              img={require("../img/g1.png")}
+              prodName={"iPhone 13 Pro - Transparent LKR 499"}
+              price={"100"}
+              k={0}
 
-          <div className=" grad-holder col-12 col-md-6 col-lg-3 my-5">
-            <Card />
+            />
           </div>
+          <div className=" grad-holder col-12 col-md-6 col-lg-3 my-5">
+            <Card
+              img={require("../img/g4.png")}
+              prodName={"iPhone 14 - Transparent with magsafe LKR 799"}
+              price={"100"}
+              k={3}
+            />
+          </div>
+          <div className=" grad-holder col-12 col-md-6 col-lg-3 my-5">
+            <Card
+              img={require("../img/g7.png")}
+              prodName={"Pixel 6a - Matte Black LKR 499"}
+              price={"100"}
+              k={6}
 
-          <div className=" grad-holder col-12 col-md-6 col-lg-3 my-5">
-            <Card />
+            />
           </div>
           <div className=" grad-holder col-12 col-md-6 col-lg-3 my-5">
-            <Card />
-          </div>
-          <div className=" grad-holder col-12 col-md-6 col-lg-3 my-5">
-            <Card />
+            <Card
+              img={require("../img/g10.png")}
+              prodName={"iPhone 13 Pro - Transparent LKR 499"}
+              price={"100"}
+              k={9}
+
+            />
           </div>
         </div>
-        <Link to="/Product" className="btn btn-primary bg-red px-5 py-2 fw-bold ">Shop Now</Link>
-
+        <Link
+          to="/Product"
+          className="btn btn-primary bg-red px-5 py-2 fw-bold "
+        >
+          Shop Now
+        </Link>
       </div>
 
       <div className="post container p-5">

@@ -1,40 +1,58 @@
-import React, { useRef, useEffect,useState } from "react";
+import React, { useRef, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import { useAuth } from './AuthContext'; // Import useAuth hook
-import '../Style/sign.css'
+import { useAuth } from "./AuthContext"; // Import useAuth hook
+import "../Style/sign.css";
 const Signup = ({ handelSingUp }) => {
-  const { setIsLogged } = useAuth(); // Use useAuth hook to get setIsLogged
+  const { setIsLogged } = useAuth();
   const { isLogged } = useAuth();
-  const {user}= useAuth(null);
-  const {setUser}= useAuth(null);
+  const { user } = useAuth(null);
+  const { setUser } = useAuth(null);
+  const { data } = useAuth(null);
+  const { setData } = useAuth(null);
 
-
-
-  const [data, setData] = useState([]);
   const usernameInput = useRef();
   const passwordInput = useRef();
   const navigate = useNavigate();
 
-  // Fetch API data
+  // // Fetch API data
+  // useEffect(() => {
+  //   const fetchData = async () => {
+  //     try {
+  //       const response = await fetch("http://localhost:3001/users", {
+  //         method: "GET",
+  //         headers: {
+  //           "Content-Type": "application/json",
+  //         },
+  //         redirect: "follow",
+  //       });
+  //       const result = await response.json();
+  //       setData(result);
+  //     } catch (error) {
+  //       console.log("error", error);
+  //     }
+  //   };
+
+  //   fetchData();
+  // }, [setData]);
+
   useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const response = await fetch("http://localhost:3000/users", {
-          method: "GET",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          redirect: "follow",
-        });
-        const result = await response.json();
-        setData(result);
-      } catch (error) {
-        console.log("error", error);
-      }
+    var myHeaders = new Headers();
+    myHeaders.append("Content-Type", "application/json");
+
+    var requestOptions = {
+      method: "GET",
+      headers: myHeaders,
+      redirect: "follow",
     };
 
-    fetchData();
-  }, []);
+    fetch(
+      "https://api.myjson.online/v1/records/c29e0b9a-a39c-4b96-969c-5ceef1113709",
+      requestOptions
+    )
+      .then((response) => response.json())
+      .then((result) => setData(result.data.users))
+      .catch((error) => console.log("error", error));
+  }, [setData]);
 
   const isValid = () => {
     return (
@@ -65,6 +83,8 @@ const Signup = ({ handelSingUp }) => {
       navigate("/");
     } else {
       //console.log("User does not exist");
+      usernameInput.current.value = "";
+      passwordInput.current.value = "";
     }
   }, [isLogged, user, navigate]);
 
@@ -87,12 +107,15 @@ const Signup = ({ handelSingUp }) => {
               type="text"
               ref={usernameInput}
               placeholder="Enter username"
+              id="Fusername"
             />
             <input
               className=" p-2 my-2"
               ref={passwordInput}
               type="password"
               placeholder="Enter password"
+              autoComplete="false"
+              id="Fpassword"
             />
           </div>
           <div className=" btn-holder  d-flex justify-content-center align-items-center flex-column">
@@ -119,3 +142,5 @@ const Signup = ({ handelSingUp }) => {
 };
 
 export default Signup;
+
+// const linkApi="https://api.myjson.online/v1/records/58226085-e18b-4d16-b440-bb8f1ffd2f53";

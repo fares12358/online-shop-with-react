@@ -1,15 +1,16 @@
 {
   "users": [
     {
-      "id": 0,
+      "id": "0",
       "name": "Fares",
+      "lname": "Mohamed",
       "username": "fares",
-      "password": "01124711424",
+      "password": "123456",
       "email": "fm883254@gmail.com",
       "role": "admin"
     },
     {
-      "id": 1,
+      "id": "1",
       "name": "Mohamed",
       "username": "mohamed",
       "password": "01124711424",
@@ -19,10 +20,88 @@
   ],
   "products": [
     {
-      "id": 0,
-      "prodName": "product 1",
+      "id": "0",
+      "prodName": "iPhone 13 Pro - Transparent LKR 499",
       "price": "100",
-      "src": "../img/image-productes/g1.png"
+      "src": "./img/g1.png"
+    },
+    {
+      "id": "1",
+      "prodName": "Samsung S23+ - Transparent LKR 799",
+      "price": "100",
+      "src": "./img/g2.png"
+    },
+    {
+      "id": "2",
+      "prodName": "Samsung S23+ - Transparent LKR 799",
+      "price": "100",
+      "src": "./img/g3.png"
+    },
+    {
+      "id": "3",
+      "prodName": "iPhone 14 - Transparent with magsafe LKR 799",
+      "price": "100",
+      "src": "./img/g4.png"
+    },
+    {
+      "id": "4",
+      "prodName": "Pixel 7 Pro - Transparent Wireless LKR 599",
+      "price": "100",
+      "src": "./img/g5.png"
+    },
+    {
+      "id": "5",
+      "prodName": "iPhone 14 - Transparent with magsafe LKR 799",
+      "price": "100",
+      "src": "./img/g6.png"
+    },
+    {
+      "id": "6",
+      "prodName": "Pixel 6a - Matte Black LKR 499",
+      "price": "100",
+      "src": "./img/g7.png"
+    },
+    {
+      "id": "7",
+      "prodName": "Pixel 6a LKR 399",
+      "price": "100",
+      "src": "./img/g8.png"
+    },
+    {
+      "id": "8",
+      "prodName": "Pixel 7 Pro - Transparent Wireless LKR 599",
+      "price": "100",
+      "src": "./img/g9.png"
+    },
+    {
+      "id": "9",
+      "prodName": "iPhone 13 Pro - Transparent LKR 499",
+      "price": "100",
+      "src": "./img/g10.png"
+    },
+    {
+      "id": "10",
+      "prodName": "Pixel 7 Pro - Transparent Wireless LKR 599",
+      "price": "100",
+      "src": "./img/g11.png"
+    },
+    {
+      "id": "11",
+      "prodName": "Pixel 7 Pro - Transparent Wireless LKR 599",
+      "price": "100",
+      "src": "./img/g12.png"
+    },
+    {
+      "id": "12",
+      "prodName": "Samsung S23+ - Transparent LKR 799",
+      "price": "100",
+      "src": "./img/g13.png"
+    },
+    {
+      "id": "13",
+      "prodName": "iPhone 14 - Transparent with magsafe LKR 799",
+      "price": "100",
+      "src": "./img/g14.png"
     }
   ]
 }

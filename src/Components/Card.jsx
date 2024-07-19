@@ -1,23 +1,20 @@
 import React from 'react'
 import '../Style/card.css'
-const Card = () => {
+const Card = (props) => {
 
-  const chickbuy=()=>{
-
+  function buyNow(k){
+    console.log(`prod id is ${k} `);
   }
-
-
-
   return (
     <>
       <div className="card-holder text-center">
         <div className="image">
-          <img className='img-fluid' src={require('../img/image-productes/g1.png')} alt="not found" />
+          <img className='img-fluid' src={props.img} alt="not found" />
         </div>
-        <p className="description">iPhone 13 Pro - Transparent
-        LKR 499</p>
-        <div className='price'>100 L.E</div>
-        <button className='buy btn btn-primary px-4 py-1 fw-bold main-btn mt-2' onClick={chickbuy}>add to cart</button>
+        <p className="description mt-2">{props.prodName}</p>
+        <div className='price'>{props.price} L.E</div>
+        <button className='buy btn btn-primary px-4 py-1 fw-bold main-btn mt-2'
+        onClick={()=>buyNow(props.k)} >add to cart</button>
       </div>
     </>
   )

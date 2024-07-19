@@ -5,22 +5,6 @@ import Signin from "../Components/Signin";
 import Signup from "../Components/Signup";
 
 const Sign = () => {
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
   const [showSignin, setShowSignin] = useState(true);
 
   const handelShow = () => {
@@ -42,16 +26,16 @@ const Sign = () => {
 
 export default Sign;
 
-/*
-
-
-  const [signMode, setSignMode] = useState("in");
-  
-
-  const changeSignMode = () => {
-    signMode === "in" ? setSignMode("up") : setSignMode("in");
-  };
 
 
 
-*/
+
+
+
+
+
+
+
+
+
+
