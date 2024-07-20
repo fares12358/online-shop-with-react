@@ -1,11 +1,34 @@
-import React from "react";
+import React,{useEffect} from "react";
 import Nav from "../Components/Nav";
 import Footer from "../Components/Footer";
 import "../Style/home.css";
 import { Link } from "react-router-dom";
 import Card from "../Components/Card";
+import { useAuth } from "../Components/AuthContext"; // Import useAuth hook
 
 const Home = () => {
+
+  const { setProd } = useAuth(null);
+
+  useEffect(() => {
+    var myHeaders = new Headers();
+    myHeaders.append("Content-Type", "application/json");
+
+    var requestOptions = {
+      method: "GET",
+      headers: myHeaders,
+      redirect: "follow",
+    };
+
+    fetch(
+      "https://api.myjson.online/v1/records/c29e0b9a-a39c-4b96-969c-5ceef1113709",
+      requestOptions
+    )
+      .then((response) => response.json())
+      .then((result) => setProd(result.data.products))
+      .catch((error) => console.log("error", error));
+  }, [setProd]);
+
 
 
   return (

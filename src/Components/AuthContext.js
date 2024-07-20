@@ -8,10 +8,11 @@ export const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null);
   const [data, setData] = useState([]);
   const [prod, setProd] = useState([]);
+  const [Cart, setCart] = useState([]);
 
 
   return (
-    <AuthContext.Provider value={{ isLogged, setIsLogged ,user,setUser,data, setData,prod, setProd}}>
+    <AuthContext.Provider value={{ isLogged, setIsLogged ,user,setUser,data, setData,prod, setProd,Cart, setCart}}>
       {children}
     </AuthContext.Provider>
   );

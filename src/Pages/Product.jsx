@@ -1,53 +1,19 @@
-import React, { useEffect } from "react";
+import React, { useRef, useState } from "react";
 import Nav from "../Components/Nav";
 import Footer from "../Components/Footer";
 import Card from "../Components/Card";
 import { useAuth } from "../Components/AuthContext"; // Import useAuth hook
-
+import { Link } from "react-router-dom";
 const Product = () => {
   const { prod } = useAuth(null);
+  const searchInput = useRef();
 
-  const { setProd } = useAuth(null);
+  const [search, setsearch] = useState(null);
 
-  // // Fetch API data
-  // useEffect(() => {
-  //   const fetchData = async () => {
-  //     try {
-  //       const response = await fetch("http://localhost:3001/products", {
-  //         method: "GET",
-  //         headers: {
-  //           "Content-Type": "application/json",
-  //         },
-  //         redirect: "follow",
-  //       });
-  //       const result = await response.json();
-  //       setProd(result);
-  //     } catch (error) {
-  //       console.log("error", error);
-  //     }
-  //   };
-
-  //   fetchData();
-  // }, [setProd]);
-
-  useEffect(() => {
-    var myHeaders = new Headers();
-    myHeaders.append("Content-Type", "application/json");
-
-    var requestOptions = {
-      method: "GET",
-      headers: myHeaders,
-      redirect: "follow",
-    };
-
-    fetch(
-      "https://api.myjson.online/v1/records/c29e0b9a-a39c-4b96-969c-5ceef1113709",
-      requestOptions
-    )
-      .then((response) => response.json())
-      .then((result) => setProd(result.data.products))
-      .catch((error) => console.log("error", error));
-  }, [setProd]);
+  const findSearch = () => {
+    setsearch(searchInput.current.value);
+    console.log(search);
+  };
 
   return (
     <>
@@ -57,10 +23,12 @@ const Product = () => {
           <div className="py-4 text-center">
             <input
               className="search px-4 py-2 col-12 col-md-6"
+              ref={searchInput}
               type="text"
               placeholder="Search here"
               autoComplete="true"
               id="searchWord"
+              onChange={findSearch}
             />
           </div>
 
@@ -141,7 +109,14 @@ const Product = () => {
               </div>
             ))
           ) : (
-            <h1 className="text-center fw-bold text-uppercase py-5">loading</h1>
+            <>
+              <h1 className="text-center fw-bold text-uppercase py-5">
+                loading....
+              </h1>
+              <p className="text-center fw-bold ">
+                if doesn't load data go to <Link to="/">Home</Link>
+              </p>
+            </>
           )}
         </div>
       </div>
@@ -152,3 +127,24 @@ const Product = () => {
 };
 
 export default Product;
+
+// // Fetch API data
+// useEffect(() => {
+//   const fetchData = async () => {
+//     try {
+//       const response = await fetch("http://localhost:3001/products", {
+//         method: "GET",
+//         headers: {
+//           "Content-Type": "application/json",
+//         },
+//         redirect: "follow",
+//       });
+//       const result = await response.json();
+//       setProd(result);
+//     } catch (error) {
+//       console.log("error", error);
+//     }
+//   };
+
+//   fetchData();
+// }, [setProd]);
