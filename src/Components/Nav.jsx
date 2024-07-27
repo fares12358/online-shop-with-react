@@ -7,6 +7,8 @@ const Nav = () => {
   const { setIsLogged } = useAuth();
   const { user } = useAuth();
   const { setUser } = useAuth();
+  const { setCart } = useAuth();
+  const { setProdAdd } = useAuth();
 
   useEffect(() => {
     const SginBtn = document.querySelector(".sign");
@@ -37,6 +39,9 @@ const Nav = () => {
   const loguot=()=>{
     setIsLogged(false);
     setUser(null)
+    setProdAdd([])
+    setCart([])
+
   }
   return (
     <>

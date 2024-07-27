@@ -9,31 +9,9 @@ const Signup = ({ handelSingUp }) => {
   const { setUser } = useAuth(null);
   const { data } = useAuth(null);
   const { setData } = useAuth(null);
-
   const usernameInput = useRef();
   const passwordInput = useRef();
   const navigate = useNavigate();
-
-  // // Fetch API data
-  // useEffect(() => {
-  //   const fetchData = async () => {
-  //     try {
-  //       const response = await fetch("http://localhost:3001/users", {
-  //         method: "GET",
-  //         headers: {
-  //           "Content-Type": "application/json",
-  //         },
-  //         redirect: "follow",
-  //       });
-  //       const result = await response.json();
-  //       setData(result);
-  //     } catch (error) {
-  //       console.log("error", error);
-  //     }
-  //   };
-
-  //   fetchData();
-  // }, [setData]);
 
   useEffect(() => {
     var myHeaders = new Headers();
@@ -46,7 +24,7 @@ const Signup = ({ handelSingUp }) => {
     };
 
     fetch(
-      "https://api.myjson.online/v1/records/c29e0b9a-a39c-4b96-969c-5ceef1113709",
+      "https://api.myjson.online/v1/records/80778b73-8b23-44d0-8838-0f4233ccae44",
       requestOptions
     )
       .then((response) => response.json())
@@ -102,13 +80,16 @@ const Signup = ({ handelSingUp }) => {
       <div className="container SignUp py-5">
         <form action="" className=" py-5 ">
           <div className="d-flex flex-column justify-content-center align-items-center ">
+          <label htmlFor="Fusername">the user is (fares)</label>
             <input
               className=" p-2 my-2"
               type="text"
               ref={usernameInput}
               placeholder="Enter username"
               id="Fusername"
+              name="Fusername"
             />
+          <label htmlFor="Fpassword">the password is (123456)</label>
             <input
               className=" p-2 my-2"
               ref={passwordInput}
@@ -116,6 +97,8 @@ const Signup = ({ handelSingUp }) => {
               placeholder="Enter password"
               autoComplete="false"
               id="Fpassword"
+              name="Fpassword"
+
             />
           </div>
           <div className=" btn-holder  d-flex justify-content-center align-items-center flex-column">
@@ -142,5 +125,3 @@ const Signup = ({ handelSingUp }) => {
 };
 
 export default Signup;
-
-// const linkApi="https://api.myjson.online/v1/records/58226085-e18b-4d16-b440-bb8f1ffd2f53";

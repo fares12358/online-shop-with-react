@@ -1,32 +1,26 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import { useAuth } from "../Components/AuthContext"; // Import useAuth hook
 import { Link } from "react-router-dom";
 import Nav from "../Components/Nav";
 import Footer from "../Components/Footer";
 import "../Style/cart.css";
 const Cart = () => {
-  const { Cart } = useAuth();
+  const { prodAdd } = useAuth();
+  const { TotalPrice } = useAuth();
+  const { setTotalPrice } = useAuth();
+  const { setProdAdd } = useAuth();
   const { setCart } = useAuth();
-  const { prod } = useAuth();
-  const [prodAdd, setProdAdd] = useState(null);
-  const uniqueCart = [...new Set(Cart)];
-  const [TotalPrice, setTotalPrice] = useState(0);
+  const { Cart } = useAuth();
+
   useEffect(() => {
-    if (uniqueCart.length > 0) {
-      const updatedProdAdd = uniqueCart.map((item) => prod[item]);
-      setProdAdd(updatedProdAdd);
-      const totalPrice = updatedProdAdd.reduce(
-        (sum, item) => sum + +item.price,
-        0
-      );
-      setTotalPrice(totalPrice);
-    } else {
-      setProdAdd([]);
-      setTotalPrice(0);
-    }
-  }, [Cart, prod]);
+    const total = prodAdd.reduce((sum, product) => +sum + +product.price, 0);
+    setTotalPrice(total);
+  }, [prodAdd, setTotalPrice]);
 
   const removeItem = (index) => {
+    const updatedProd = prodAdd.filter((_, i) => i !== index);
+    setProdAdd(updatedProd);
+    const uniqueCart = [...new Set(Cart)];
     const updatedCart = uniqueCart.filter((_, i) => i !== index);
     setCart(updatedCart);
   };
@@ -35,8 +29,8 @@ const Cart = () => {
     <>
       <Nav />
       <div className="container cart">
-        <div className="row py-5 gap-1">
-          <div className=" viewer col-11 col-md-8 p-0">
+        <div className="row py-5">
+          <div className=" viewer col-11 p-0 ms-auto me-auto">
             {prodAdd && prodAdd.length > 0 ? (
               prodAdd.map((ele, index) => (
                 <div
@@ -71,25 +65,32 @@ const Cart = () => {
               </>
             )}
           </div>
-
-          <div className="total col-11 col-md-3 d-flex flex-column justify-content-start align-items-start pt-3 ps-4">
-            <div className="">
-              <div className="my-2 fw-bold">
-                Subtotal: <span className="ms-2">{TotalPrice}</span> .LE
+          {prodAdd && prodAdd.length > 0 ? (
+            <>
+              <div className="total col-11 ms-auto me-auto d-flex justify-content-center flex-column align-items-center">
+                <div className="">
+                  <div className="my-2 fw-bold">
+                    Subtotal: <span className="ms-2">{TotalPrice}</span> .LE
+                  </div>
+                  <div className="my-2 fw-bold">
+                    Tax: <span className="ms-3">{TotalPrice * 0.1}</span> .LE
+                  </div>
+                  <div className="my-2 fw-bold">
+                    Total:{" "}
+                    <span className="ms-3">
+                      {TotalPrice + TotalPrice * 0.1}
+                    </span>{" "}
+                    .LE
+                  </div>
+                </div>
+                <button className="order btn btn-primary px-4 bg-red fw-bold my-3">
+                  send order
+                </button>
               </div>
-              <div className="my-2 fw-bold">
-                Tax: <span className="ms-3">{TotalPrice * 0.1}</span> .LE
-              </div>
-              <div className="my-2 fw-bold">
-                Total:{" "}
-                <span className="ms-3">{TotalPrice + TotalPrice * 0.1}</span>{" "}
-                .LE
-              </div>
-            </div>
-            <button className="order btn btn-primary px-4 bg-red fw-bold m-auto mt-md-4 my-3 ">
-              send order
-            </button>
-          </div>
+            </>
+          ) : (
+            <></>
+          )}
         </div>
       </div>
 

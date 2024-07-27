@@ -1,4 +1,4 @@
-import React,{useEffect} from "react";
+import React, { useEffect } from "react";
 import Nav from "../Components/Nav";
 import Footer from "../Components/Footer";
 import "../Style/home.css";
@@ -7,7 +7,6 @@ import Card from "../Components/Card";
 import { useAuth } from "../Components/AuthContext"; // Import useAuth hook
 
 const Home = () => {
-
   const { setProd } = useAuth(null);
 
   useEffect(() => {
@@ -21,19 +20,17 @@ const Home = () => {
     };
 
     fetch(
-      "https://api.myjson.online/v1/records/c29e0b9a-a39c-4b96-969c-5ceef1113709",
+      "https://api.myjson.online/v1/records/80778b73-8b23-44d0-8838-0f4233ccae44",
       requestOptions
     )
       .then((response) => response.json())
       .then((result) => setProd(result.data.products))
       .catch((error) => console.log("error", error));
   }, [setProd]);
-
-
-
   return (
     <>
       <Nav />
+
       <div className="container home py-5">
         <div className="row py-5">
           <div className="text-holder col-12 col-lg-6 p-5 ">
@@ -103,7 +100,6 @@ const Home = () => {
               prodName={"iPhone 13 Pro - Transparent LKR 499"}
               price={"100"}
               k={0}
-
             />
           </div>
           <div className=" grad-holder col-12 col-md-6 col-lg-3 my-5">
@@ -120,7 +116,6 @@ const Home = () => {
               prodName={"Pixel 6a - Matte Black LKR 499"}
               price={"100"}
               k={6}
-
             />
           </div>
           <div className=" grad-holder col-12 col-md-6 col-lg-3 my-5">
@@ -129,7 +124,6 @@ const Home = () => {
               prodName={"iPhone 13 Pro - Transparent LKR 499"}
               price={"100"}
               k={9}
-
             />
           </div>
         </div>
